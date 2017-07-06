@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Notification
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ 
+  <ion-list>
+  <form #notificationForm="ngForm" (ngSubmit)=" fnSendNotification()" novalidate>
+            <ion-item>
+                <ion-label stacked>Header</ion-label>
+                <ion-input type="text" name="headings" [(ngModel)]="myFormData.headings" ngControl="headings" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Message</ion-label>
+                <!-- <ion-input type="text" name="message" [(ngModel)]="myFormData.message" ngControl="message" minlength="2" maxlength="20" required></ion-input> -->
+
+                <ion-textarea autosize name="message" [(ngModel)]="myFormData.message" ngControl="message" minlength="2" maxlength="20" required></ion-textarea>
+            </ion-item>
+            <br/>
+            <button ion-button full type="submit" class="login-btn">SEND</button>
+        </form>
+    </ion-list>
+</ion-content>
